@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Alphabet</title>
+
+        <!-- CSS -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet"> 
+		<!-- Fin CSS -->
+        
+    </head>
+	
+    <body>
+        <div class="container">
+            <!-- Header -->
+			<div class="row">
+                <div class="col-md-12">
+                    <div class="page-header">
+                        <h1>Exemple simple de lecture</h1>
+                        <p class="lead">Clique sur les mots.</p>
+                    </div>
+                </div>
+            </div>
+			<!-- Fin Header -->
+			
+			<!-- Bloc message -->
+            <div class="row">
+                <div class="col-md-12">
+					<span id="tts_this" class="hidden">
+						A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+					</span>
+                </div>
+            </div>
+			<!-- Fin bloc message -->
+			
+			<br><br>
+			
+			<!-- Bloc message -->
+            <div class="row">
+                <div class="col-md-12" id="show_tts">
+                </div>
+            </div>
+			<!-- Fin bloc message -->
+			
+        </div>
+        
+        
+        <!-- Chargement des JS -->
+        <script src="http://code.responsivevoice.org/responsivevoice.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script src="js/play_sound.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+		
+		<script>
+			$( document ).ready(function() {
+				tts_all();
+			});
+		</script>
+		<!-- Fin JS -6>
+    </body>
+</html>
