@@ -25,13 +25,13 @@ function tts_all() {
 		if (value == "." || value == "!" || value == "," || value == "?") {
 			$("#show_tts").append('<a class="btn btn-primary btn-large" href="#" role="button">' + value + '</a>');
 		} else if (value.indexOf("<niv2>") >=0) {
-			$("#show_tts").append('<a class="btn btn-warning btn-large" href="#" role="button" onclick="PlaySound(' + "'" + 
+			$("#show_tts").append('<a class="btn btn-niv2 btn-large" href="#" role="button" onclick="PlaySound(' + "'" + 
 			value.replace("<niv2>", "").replace("</niv2>", "") + "'" + ')">' + value.replace("<niv2>", "").replace("</niv2>", "") + '</a>');
 		} else if (value.indexOf("<niv3>") >=0) {
-			$("#show_tts").append('<a class="btn btn-danger btn-large" href="#" role="button" onclick="PlaySound(' + "'" + 
+			$("#show_tts").append('<a class="btn btn-niv3 btn-large" href="#" role="button" onclick="PlaySound(' + "'" + 
 			value.replace("<niv3>", "").replace("</niv3>", "") + "'" + ')">' + value.replace("<niv3>", "").replace("</niv3>", "") + '</a>');
 		} else {
-			$("#show_tts").append('<a class="btn btn-primary btn-large" href="#" role="button" onclick="PlaySound(' + "'" + 
+			$("#show_tts").append('<a class="btn btn-niv1 btn-large" href="#" role="button" onclick="PlaySound(' + "'" + 
 			value + "'" + ')">' + value + '</a>');
 		}
 	});
