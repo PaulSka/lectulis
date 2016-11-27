@@ -18,25 +18,42 @@ function tts_all() {
 	var words = $("#tts_this").html().split(" ");
 	//Pour chaque element ...
 	$.each(words, function(key, value) {
+
 		//On formatte la valeur
 		value = value.replace(/[\n\r]/g, '').replace('\t','').trim();
+		
+		value_visible = value
+		value_speech = value
+		
+		//echappement des caractères
+		value_speech = value_speech.replace("'","\\'")
+		
+		//on verifie pour la prononciation
+		if (value_speech.indexOf("@") >= 0) {
+			res = value_speech.split("@")
+			value_visible = res[0]
+			value_speech = res[1]
+		}
+		console.log("dbg1 " + value_visible)
+		console.log("dbg2 " + value_speech)
+
 		//On ajoute les donnees
 		//Verification
 		if (value == "." || value == "!" || value == "," || value == "?") {
-			$("#show_tts").append('<a class="btn btn-primary btn-large" href="#" role="button">' + value + '</a>');
+			$("#show_tts").append('<a class="btn btn-primary btn-large" href="#" role="button">' + value_visible + '</a>');
 		} else if (value.length == 1) {
 			$("#show_tts").append('<a class="btn btn-niv1 btn-large" href="#" role="button" onclick="PlaySound(' + "'" + 
-				remove_accent(value) + "'" + ')">' + value + '</a>');
+				remove_accent(value_speech) + "'" + ')">' + value_visible + '</a>');
 		} else {
 			if (value.indexOf("<niv2>") >=0) {
 				$("#show_tts").append('<a class="btn btn-niv2 btn-large" href="#" role="button" onclick="PlaySound(' + "'" + 
-				value.replace("<niv2>", "").replace("</niv2>", "") + "'" + ')">' + value.replace("<niv2>", "").replace("</niv2>", "") + '</a>');
+				value_speech.replace("<niv2>", "").replace("</niv2>", "") + "'" + ')">' + value_visible.replace("<niv2>", "").replace("</niv2>", "") + '</a>');
 			} else if (value.indexOf("<niv3>") >=0) {
 				$("#show_tts").append('<a class="btn btn-niv3 btn-large" href="#" role="button" onclick="PlaySound(' + "'" + 
-				value.replace("<niv3>", "").replace("</niv3>", "") + "'" + ')">' + value.replace("<niv3>", "").replace("</niv3>", "") + '</a>');
+				value_speech.replace("<niv3>", "").replace("</niv3>", "") + "'" + ')">' + value_visible.replace("<niv3>", "").replace("</niv3>", "") + '</a>');
 			} else {
 				$("#show_tts").append('<a class="btn btn-niv1 btn-large" href="#" role="button" onclick="PlaySound(' + "'" + 
-				value + "'" + ')">' + value + '</a>');
+				value_speech + "'" + ')">' + value_visible + '</a>');
 			}
 		}
 	});
