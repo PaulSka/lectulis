@@ -2,6 +2,7 @@ function PlaySound(tts) {
 	//Fonction pour dicter en TTS le texte passer en argument (tts)
     var tts_speaker = "French Female"
     responsiveVoice.speak(tts, tts_speaker, {onstart: StartCallback, onend: EndCallback});
+    return false;
 };
 
 function StartCallback() {
