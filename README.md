@@ -12,7 +12,7 @@ Il est possible, suivant des indicateurs de niveau, proposer des boutons de coul
 Pour utiliser Lectulis et créer vos propres pages, vous pouvez effectuer une copie du fichier fable_lafontaine.html.
 Dans celui-ci, vous trouvez le bloc suivant :
 
-```
+```html
 <span id="tts_this" class="hidden">
 	<niv3>Maître</niv3> Corbeau , sur un arbre <niv2>perché</niv2> , 
 	<niv2>Tenait</niv2> en son bec un <niv3>fromage</niv3> .
@@ -34,6 +34,17 @@ Lectulis utilise les outils suivants :
 * Jquery pour booster Javascript
 * Bootstrap pour la mise en forme
 * Responsive Voice pour le modules de diction (TTS)
+
+Un QRCode est disponible permettant de pointer directement sur l'adresse du site
+
+Reference-style: 
+![alt text][logo]
+
+[logo]: qrcode_lectulis.png "Lectulis"
+
+### Licence
+
+Letulis est sous licence GPL v3
 
 ### Contacts
 
