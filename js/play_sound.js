@@ -2,7 +2,6 @@ function PlaySound(tts) {
 	//Fonction pour dicter en TTS le texte passer en argument (tts)
     var tts_speaker = "French Female"
     responsiveVoice.speak(tts, tts_speaker, {onstart: StartCallback, onend: EndCallback});
-    return false;
 };
 
 function StartCallback() {
@@ -44,17 +43,17 @@ function tts_all() {
 			$("#show_tts").append('<a class="btn btn-primary btn-large" href="#" role="button">' + value_visible + '</a>');
 		} else if (value.length == 1) {
 			$("#show_tts").append('<a class="btn btn-niv1 btn-large" href="#" role="button" onclick="PlaySound(' + "'" + 
-				remove_accent(value_speech) + "'" + ')">' + value_visible + '</a>');
+				remove_accent(value_speech) + "'" + ');return false;">' + value_visible + '</a>');
 		} else {
 			if (value.indexOf("<niv2>") >=0) {
 				$("#show_tts").append('<a class="btn btn-niv2 btn-large" href="#" role="button" onclick="PlaySound(' + "'" + 
-				value_speech.replace("<niv2>", "").replace("</niv2>", "") + "'" + ')">' + value_visible.replace("<niv2>", "").replace("</niv2>", "") + '</a>');
+				value_speech.replace("<niv2>", "").replace("</niv2>", "") + "'" + ');return false;">' + value_visible.replace("<niv2>", "").replace("</niv2>", "") + '</a>');
 			} else if (value.indexOf("<niv3>") >=0) {
 				$("#show_tts").append('<a class="btn btn-niv3 btn-large" href="#" role="button" onclick="PlaySound(' + "'" + 
-				value_speech.replace("<niv3>", "").replace("</niv3>", "") + "'" + ')">' + value_visible.replace("<niv3>", "").replace("</niv3>", "") + '</a>');
+				value_speech.replace("<niv3>", "").replace("</niv3>", "") + "'" + ');return false;">' + value_visible.replace("<niv3>", "").replace("</niv3>", "") + '</a>');
 			} else {
 				$("#show_tts").append('<a class="btn btn-niv1 btn-large" href="#" role="button" onclick="PlaySound(' + "'" + 
-				value_speech + "'" + ')">' + value_visible + '</a>');
+				value_speech + "'" + ');return false;">' + value_visible + '</a>');
 			}
 		}
 	});
