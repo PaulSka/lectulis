@@ -34,9 +34,6 @@ function tts_all() {
 			value_visible = res[0]
 			value_speech = res[1]
 		}
-		console.log("dbg1 " + value_visible)
-		console.log("dbg2 " + value_speech)
-
 		//On ajoute les donnees
 		//Verification
 		if (value == "." || value == "!" || value == "," || value == "?") {
