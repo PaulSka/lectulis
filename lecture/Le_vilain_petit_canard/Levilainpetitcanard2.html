@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Le vilain petit canard </title>
+
+        <!-- load Layout -->
+        <link rel="import" href="/lectulis/layout.html">  
+		<!-- Fin CSS -->        
+    </head>
+	
+    <body>
+        <div class="container">
+            <!-- Header -->
+			<div class="row">
+				<br>
+                <div class="col-md-12">
+                    <ul class="nav nav-pills">
+						<li role="accueil" ><a href="index.html">Accueil</a></li>
+					</ul>
+                </div>
+            </div>
+			<br>
+			<div class="row">
+                <div class="col-md-12">
+                    <div class="page-header">
+                        <h1>Le vilain petit canard 2</h1>
+                        <p class="lead">Lis les mots et clique dessus pour savoir si tu as la bonne réponse.</p>
+                    </div>
+                </div>
+            </div>
+			<!-- Fin Header -->
+			
+			<!-- Bloc message -->
+            <div class="row">
+                <div class="col-md-12">
+					<span id="tts_this" class="hidden">
+						La cane présente ses petits . " C’est un vilain petit canard ! " crient les poules et les canards . Le caneton se sauve .
+					</span>
+                </div>
+            </div>
+			<!-- Fin bloc message -->
+			
+			<br><br>
+			
+			<!-- Bloc message -->
+            <div class="row">
+                <div class="col-md-12" id="show_tts">
+                </div>
+            </div>
+			<!-- Fin bloc message -->
+			
+        </div>
+        
+        
+        <!-- Chargement des JS -->
+		<script>
+			$( document ).ready(function() {
+				tts_all();
+			});
+		</script>
+		<!-- Fin JS -->
+    </body>
+</html>
